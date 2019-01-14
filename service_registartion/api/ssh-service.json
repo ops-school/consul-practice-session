@@ -1,0 +1,15 @@
+{
+  "name": "ssh",
+  "id":"ssh-22",
+  "port": 22,
+  "check": {
+    "name": "Port 22 tcp check",
+    "interval": "30s",
+    "TCP": "localhost:22"
+  },
+  "check": {
+    "name": "ssh service check",
+    "interval": "1m",
+    "args": ["/bin/systemctl", "status", "sshd.service"]
+  }
+}
