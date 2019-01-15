@@ -34,9 +34,9 @@ data "template_file" "consul_client" {
 resource "aws_instance" "consul_server" {
   count = "${var.servers}"
 
-  ami           = "ami-0653e888ec96eab9b"
+  ami           = "${var.ami}"
   instance_type = "t2.micro"
-  key_name      = "radzi"
+  key_name      = "${var.key_name}"
 
   iam_instance_profile   = "${aws_iam_instance_profile.consul-join.name}"
   vpc_security_group_ids = ["${aws_security_group.opsschool_consul.id}"]
@@ -52,7 +52,7 @@ resource "aws_instance" "consul_server" {
 resource "aws_instance" "consul_client" {
   count = "${var.clients}"
 
-  ami           = "ami-0653e888ec96eab9b"
+  ami           = "${var.ami}"
   instance_type = "t2.micro"
   key_name      = "${var.key_name}"
 

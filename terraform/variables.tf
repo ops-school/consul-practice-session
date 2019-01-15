@@ -16,3 +16,8 @@ variable "consul_version" {
 variable "key_name" {
   description = "name of ssh key to attach to hosts"
 }
+
+variable "ami" {
+  description = "name of ssh key to attach to hosts"
+  default = "ami-0653e888ec96eab9b"
+}
