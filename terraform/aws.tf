@@ -1,5 +1,6 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "${var.region}"
+  version = "~> 1.0"
 }
 
 resource "aws_security_group" "opsschool_consul" {

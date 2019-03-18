@@ -18,8 +18,8 @@ docker run -d \
     gliderlabs/registrator:latest \
       consul://localhost:8500
 
-# Register
-docker run --rm -d --name=webserver -e SERVICE_8080_NAME=webserver -e SERVICE_8080_TAGS=webserver,docker -p 8080:80 yeasy/simple-web:latest
+# Bring up and register random port
+docker run --rm -d --name=webserver -P -e SERVICE_TAGS=webserver,docker yeasy/simple-web:latest
 
 # DeRegister
 docker stop webserver

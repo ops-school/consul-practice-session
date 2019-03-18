@@ -34,7 +34,7 @@ data "template_file" "consul_client" {
 resource "aws_instance" "consul_server" {
   count = "${var.servers}"
 
-  ami           = "${var.ami}"
+  ami           = "${lookup(var.ami, var.region)}"
   instance_type = "t2.micro"
   key_name      = "${var.key_name}"
 
@@ -52,7 +52,7 @@ resource "aws_instance" "consul_server" {
 resource "aws_instance" "consul_client" {
   count = "${var.clients}"
 
-  ami           = "${var.ami}"
+  ami           = "${lookup(var.ami, var.region)}"
   instance_type = "t2.micro"
   key_name      = "${var.key_name}"
 

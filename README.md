@@ -3,7 +3,7 @@
 ### Steps to bring up the environment:
 * Make sure your credentials for the AWS TerraForm provider are set (file or environemnt variables)
 * cd to `terraform` dir
-* Update key_name variable (or you will be prompted for it) with the name of your ssh key pair in AWS
+* Update key_name & region variables (or you will be prompted for it) with the name of your ssh key pair in AWS
 * Run `terraform init`
 * Run `terraform plan`
 * Run `terraform apply`
