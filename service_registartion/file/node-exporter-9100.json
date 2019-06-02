@@ -1,0 +1,15 @@
+{
+  "service": {
+    "name": "node-expoter",
+    "id":"node-exporter-9100",
+    "tags": ["metrics"],
+    "port": 9100,
+    "checks": [
+      {
+        "name": "Port 9100 tcp check",
+        "interval": "30s",
+        "TCP": "localhost:9100"
+      }
+    ]
+  }
+}

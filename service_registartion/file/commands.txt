@@ -1,4 +1,5 @@
 # Register
+# ssh 
 vi /etc/consul.d/ssh-22.json
 systemctl reload consul
 
@@ -6,3 +7,11 @@ systemctl reload consul
 rm /etc/consul.d/ssh-22.json
 consul reload
 
+
+# node-exporter
+vi /etc/consul.d/node-expoter-22.json
+systemctl reload consul
+
+# DeRegister
+rm /etc/consul.d/node-expoter-22.json
+consul reload

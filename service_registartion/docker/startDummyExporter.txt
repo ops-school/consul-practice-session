@@ -1,0 +1,5 @@
+# Bring up and register dummy exporter
+docker run --rm -d --name dummyexporter2 -P -e SERVICE_TAGS=dummyexporter,docker,metrics -p 8080:5000 dummyexporter
+
+# DeRegister
+docker stop dummyexporter2
